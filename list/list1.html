@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Le styles -->
+<link href="../css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/cqc.css">
+<link rel="stylesheet" href="./insideFolder.css">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.js"></script>
+    <![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144"
+	href="../ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114"
+	href="../ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72"
+	href="../ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed"
+	href="../ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../ico/favicon.png">
+</head>
+
+<body>
+	<!--menu_1-->
+
+	<div class="container-fluid">
+		<div class="row-fluid"><!--span_start-->
+	        <!-- <div class="col-sm-2" id="menu23">
+	          <div class="well sidebar-nav">
+	            <ul class="nav nav-list">
+	              <li class="nav-header">2ndMenu</li>
+	              <li><a href="../master_usr/list.html">User</a></li>
+	              <li><a href="../master_grp/list.html">Group</a></li>
+	            </ul>
+	          </div> --><!--/.well
+	        </div><!/span-->
+	        <!--menu_left-->
+
+			<div class="col-sm-10">
+				<!--/row-->
+				<div class="col-sm-10">
+					<form id="myForm" class="form-horizontal" role="form" method="POST">
+						<div class="row-fluid">
+							<div class="form-group">
+								<div class="col-sm-2">
+					
+									<button type="button" class="btn btn-default" id="submit" onclick="setPage(1)">Replace Email</button>
+									<input type="hidden" value="1" name="pageno" id="pageno">
+								</div>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<label for="inputEmail3" class="col-sm-2 control-label">
+							</label>
+							
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-2">
+					<form id="myForm2" action="../q1/updateEmail.php" class="form-horizontal" role="form"
+						method="POST" action="./insert.php">
+						<div class="form-group">
+							<button type="submit" class="btn btn-default" id="button2"
+								name="button2">Replace Email</button>
+							<input type="hidden" id="mode" name="mode" value="insert">
+							</button>
+							<a href="./insert.html"> </a>
+						</div>
+					</form>
+				</div>
+				<script>
+					
+				</script>
+
+				<div class="form-group">
+					<div id="result">
+
+						
+						<table class="table table-bordered table-striped" id="resultTable">
+							<thead>
+								<tr>
+									<th class="minW80">ID MID</th>
+									<th class="minW200">EMAIL</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!--Forloop_Header_0-->
+								<tr data-href="#">
+								<td><!--q1_mid--></td>
+								<td class="allLineBreak">
+								<div class="overflowY"><!--q1_email--></div></td>
+								</tr>
+								<!--Forloop_Footer_0-->
+							</tbody>
+						</table>
+						<div class="form-group">
+							<!--PAGERTEXT-->
+						</div>
+						
+
+					</div>
+				</div>
+
+				<form id="myForm3" class="form-horizontal commentout" role="form" method="POST">
+					<div class="form-group">
+						<label for="usr_vch8" class="col-sm-2 control-label">CSVUpload</label>
+						<div class="col-sm-10">
+							<div class="file_box upload">
+								<div class="fileupload">
+									<span class="btn btn-success fileinput-button"> <i
+										class="glyphicon glyphicon-plus"></i> <span>Upload</span> <input
+										id="fileupload" type="file" name="files[]" accept="text/csv"
+										data-url="../upload/image_usrFromAdmin.php">
+									</span>
+								</div>
+							</div>
+							<br> <span id="img_error" style="color: red"></span>
+							<p>ファイル形式：CSV：10MB以下</p>
+							<div class="innerBox clearfix">
+								<div class="photo">
+									<div id="imagespace">
+										<!--usr_vch8-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<div class="form-group commentout">
+					<label for="usr_vch8" class="col-sm-2 control-label">CSVDownload</label>
+					<div class="col-sm-10">
+						<a href="./download.php"><button type="add"
+								class="btn btn-default" id="insert">CSVDownload</button></a>
+					</div>
+				</div>
+
+			</div>
+			<!--/span-->
+		</div>
+		<!--/row-->
+	</div>
+
+	<hr>
+
+	<footer>
+		<p>&copy; Company 2013</p>
+	</footer>
+
+
+	<!-- Le javascript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.form.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.js"></script>
+	<script type="text/javascript" src="../js/jquery.validate.japlugin.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../menu/menu.js"></script>
+
+	<!-- Search & Get Result -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setPage(1);
+		});
+
+		//Pagerから呼び出されるリストのページ切り替え
+		function setPage(obj){
+			dispLoading("処理中...");	//Loading表示
+			$('#pageno').val(obj);
+			var options = {
+				url:		'./list.php',	// target element(s) to be updated with server response
+				type:		'POST',						// HTTPメソッドの種類
+				success:	showList					// post-submit callback
+			};
+			$('#myForm').ajaxForm(options);
+            $('#myForm').submit();
+			return false;
+		}
+		function showList(responseText, statusText, xhr, $form)  {
+			//alert(responseText);
+			$('#resultTableSpace').html(responseText);
+			//data-hrefの属性を持つtrを選択しclassにclickableを付加
+			$('tr[data-href]').addClass('clickable')
+			//クリックイベント
+			.click(function(e) {
+			  //e.targetはクリックした要素自体、それがa要素以外であれば
+			  if(!$(e.target).is('a')){
+			    //その要素の先祖要素で一番近いtrの
+			    //data-href属性の値に書かれているURLに遷移する
+			    window.location = $(e.target).closest('tr').data('href');}
+			});
+            removeLoading();			//Loading表示削除
+		}
+
+    </script>
+	<!-- Search & Get Result -->
+
+	<!-- File Upload -->
+	<script src="../js/fileupload/jquery.ui.widget.js"></script>
+	<script src="../js/fileupload/jquery.iframe-transport.js"></script>
+	<script src="../js/fileupload/jquery.fileupload.js"></script>
+	<script>
+      $(function () {
+
+        $('#fileupload').fileupload({
+          maxChunkSize: 1800000,
+          dataType: 'json',
+          done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+						var msg = "アップロード完了。この後該当テーブルデータクリアし、データ展開と格納、データはエラーの可能性があるので別プロセスで投入かと。。。"
+						if(file.error!=null) {
+							alert("ファイルアップロードに失敗しました");
+						} else {
+							alert(msg);
+							alert(file.name);
+
+							$.post("csvInsert.php", {filename: file.name});
+
+						}
+						//var imghtml = setImages(file.name);
+            });
+          }
+        });
+      });
+			//Set Images for Header------------------------
+			function setImages(values){
+					var imghtml='<img src="../upload/getUsrImageFromAdmin.php';
+					imghtml +='?filename='+values+'&fld_uid='+$('#usr_mid').val()+'" style="max-width:110px;height:auto;">';
+					imghtml +='<span id="userPoints" class="imgFrame">X&nbsp;'+imghtml+'</span>';
+					imghtml +='<input type=\'hidden\' id=\'usr_mid\' name=\'usr_mid\' value=\''+values+'\'>'+imghtml+'</p>';
+					imghtml +='<p>'+imghtml+'</p>';
+					imghtml +='<a href = \'#\' onclick=\'(function (obj){obj.remove();}(this));\' \class="col-sm-3\">'+imghtml+'</a>';
+					$('#imagespace').empty().append(imghtml);
+
+			}
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+/* charset */
+@charset "UTF-8";
+
+body {
+	font-family: "Meiryo UI","Meiryo","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","Osaka",sans-serif;
+	font-size:16px;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+.navbar {
+   background-color:#F8F8F8;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFFFFF;
+    background-color:#FFFFEE;
+}
+
+.userinfo{
+	margin-left: 30px;
+	margin-bottom: 10px;
+	font-size:12px;
+}
+
+.commentout{
+	display:none;
+}
+
+.margin_top1{
+	margin-top: 10px;
+}
+
+.margin_top50{
+	margin-top: 50px;
+}
+
+.openwindowcell{
+	color: #008000;
+	text-decoration: underline;
+	/*background-color:#FFFFEE;*/
+	margin:0px;
+	padding:0px;
+}
+.openwindowcell:hover{
+	cursor: pointer;
+}
+
+.tablehead{
+	background-color:#FAFAFA;
+}
+
+/*For File Upload Button*/
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+
+
+.list-group-item.active a { 
+/*list-group-item active*/
+    color: #FFFFFF;
+}
+
+/*Table Cell Adjustment*/
+.dateWidth{
+  width:120px;
+}
+.deptShortWidth{
+  width:120px;
+}
+
+.allLineBreak{
+  word-break:break-all;
+}
+
+.tableMaxW{
+  width:100%;
+}
+.minW40{
+  min-width:40px;
+}
+.minW50{
+  min-width:50px;
+}
+.minW80{
+  min-width:80px;
+}
+.minW100{
+  min-width:100px;
+}
+.minW120{
+  min-width:120px;
+}
+.minW130{
+  min-width:130px;
+}
+.minW150{
+  min-width:150px;
+}
+.minW160{
+  min-width:160px;
+}
+.minW180{
+  min-width:180px;
+}
+.minW200{
+  min-width:200px;
+}
+.minW240{
+  min-width:240px;
+}
+
+input.inpMaxW60{
+  max-width:60px;
+}
+input.inpMaxW80{
+  max-width:80px;
+}
+input.inpMaxW100{
+  max-width:100px;
+}
+input.inpMaxW120{
+  max-width:120px;
+}
+.maxW150{
+  max-width:150px;
+}
+
+.width120{
+  width:120px;
+}
+
+.floadLeft{
+  float:left;
+}
+
+/*Display Adjustment*/
+.overflowY{
+    height:1.4em;
+    line-height:1.4em;
+    width:100%;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+.allLineBreak div{
+    height:1.4em;
+    line-height:1.4em;
+    width:100%;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+.styleNone{
+    border:none;
+    background:none;
+}
+
+.topPadding7px{
+  padding-top:7px;
+}
+
+/*Button Area Adjustment*/
+.container{
+  width:auto;
+}
+
+/*処理中のくるくる回るやつ*/
+#loading{
+    border:1px dashed #999;
+    padding:15px;
+    position: fixed;
+    top:50%;
+    left:50%;
+    background-color:#FFF;
+    filter: alpha(opacity=85);
+    -moz-opacity:0.85;
+    opacity:0.85;
+}
+ 
+#loading .loadingMsg{
+    text-align:center;
+    padding-top:100px;
+    width:100px;
+    background-image:url("../img/gif-load.gif");
+    background-position: center top;
+    background-repeat: no-repeat;
+    font-family: "メイリオ"!important;
+}
+
+.removeLineParent{
+	position: relative;
+}
+.removeLineChild{
+    position: absolute;  
+    top: 15px;  
+    left: 150px;
+}
+
+.removeLine{
+	width:20%;
+	float:left;
+}
+.removeLineInput{
+	width:90%;
+}

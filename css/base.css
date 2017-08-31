@@ -1,0 +1,25 @@
+
+.dailyReport{
+  font-size: 12px;
+}
+
+.dailyReport label {
+  font-size: 12px;
+}
+
+.dailyReportConf .form-group {
+  float: none;
+}
+.dailyReportConf select {
+  float: none;
+}
+
+.temp{
+  font-size: 2em;
+  font-family: Georgia, serif;
+
+}
+
+.dailyReport td {
+white-space: nowrap;
+}

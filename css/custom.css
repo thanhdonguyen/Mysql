@@ -1,0 +1,26 @@
+button.on{
+    width: 100px;
+    height: 50px;
+    background-image: url("../img/onoff.png");
+    background-position: 390px 304px;
+    background-size: 227px 170px;
+}
+button.off{
+    width: 100px;
+    height: 50px;
+    background-image: url("../img/onoff.png");
+    background-position: 390px 247px;
+    background-size: 227px 170px;
+}
+.back{
+    width: 43px;
+    height: 40px;
+    background-image: url("../img/back.gif");
+    background-repeat: no-repeat;
+    clear: both;
+    background-size: 40px;
+    cursor: pointer;
+}
+.chzn-container-multi .chzn-choices {
+    height: 100px!important;
+}

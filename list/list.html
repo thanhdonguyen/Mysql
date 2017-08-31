@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+	<!-- IE8 対策 ：この部分を body 要素の閉じタグの前に記述する-->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	  <script src="../js/html5shiv.js"></script>
+	  <script src="../js/respond.min.js"></script>
+	<![endif]-->
+    <link rel="stylesheet" href="../css/cqc.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../ico/favicon.png" type="image/png">
+  </head>
+  <body>
+
+    <!--menu_1-->
+    <div class="container-fluid">
+      <div class="row-fluid">
+      <!--span_start-->
+        <!--/span-->
+        <!--menu_left-->
+        <!--menu_21-->
+        <!--Main Contents-->
+        <div class="col-sm-10">
+				<div class="row-fluid">
+					楽天　新規出店
+				</div>
+				<div class="row-fluid">
+					<label for="inputEmail3" class="col-sm-2 control-label">CSV出力</label>
+					<a href="./download.php?btl_dat0=<!--btl_dat0-->"><button type="button" class="btn btn-default">XLSX</button></a>
+				</div>
+					<form id="myForm" class="form-horizontal" role="form" method="POST">
+						<div class="row-fluid">
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-2 control-label"></label>
+								<div class="col-sm-10">
+									<!--button type="button" class="btn btn-default" id="submit" onclick="setPage(1)">検索</button-->
+									<input type="hidden" value="1" name="pageno" id="pageno">
+									<input type="hidden" value="<!--btl_dat0-->" name="btl_dat0" id="btl_dat0">
+								</div>
+							</div>
+						</div>
+					</form>
+				<div class="form-group">
+					<div id="resultTable">
+				
+
+					<table class="table table-bordered table-striped" >
+						<thead>
+							<tr>
+								<th class="minW100 ">ID</th>
+								<th class="minW100">EMAIL</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!--Forloop_Header_0-->
+							<tr data-href="./list.php?btl_dat0=<!--btl_dat0-->">
+								<td class="allLineBreak"><!--q1_mid--></td>
+								<td class="allLineBreak"><!--q1_email--></td>
+							</tr>
+							<!--Forloop_Footer_0-->
+						</tbody>
+					</table>
+				<div class="form-group">
+					<!--PAGERTEXT-->
+				</div>
+
+				</div>
+				</div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+      <hr>
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+    </div><!--/.fluid-container-->
+    <script src="../js/jquery.js"></script>
+	<script type="text/javascript" src="../js/jquery.form.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/common.js"></script>
+    <script src="../menu/menu.js"></script>
+	<!-- Search & Get Result -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			setPage(1);
+		});
+
+		//Pagerから呼び出されるリストのページ切り替え
+		function setPage(obj){
+			dispLoading("処理中...");	//Loading表示
+			$('#pageno').val(obj);
+			var options = {
+				url:		'./list.php',	// target element(s) to be updated with server response
+				type:		'POST',						// HTTPメソッドの種類
+				success:	showList					// post-submit callback
+			};
+			$('#myForm').ajaxForm(options);
+            $('#myForm').submit();
+			return false;
+		}
+		function showList(responseText, statusText, xhr, $form)  {
+			//alert(responseText);
+			$('#resultTable').html(responseText);
+			//data-hrefの属性を持つtrを選択しclassにclickableを付加
+			$('tr[data-href]').addClass('clickable')
+			//クリックイベント
+			.click(function(e) {
+			  //e.targetはクリックした要素自体、それがa要素以外であれば
+			  if(!$(e.target).is('a')){
+			    //その要素の先祖要素で一番近いtrの
+			    //data-href属性の値に書かれているURLに遷移する
+			    window.location = $(e.target).closest('tr').data('href');}
+			});
+            removeLoading();			//Loading表示削除
+		}
+
+    </script>
+  </body>
+</html>
