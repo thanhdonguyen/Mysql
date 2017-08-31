@@ -1,1 +1,1 @@
-# Mysql write PHP
+ #Add Mysql thanhdo.sql to database
